@@ -3,4 +3,6 @@ numpy
 scikit-learn
 matplotlib
 seaborn
--e . # Automatically triggers setup.py file
+catboost
+#-e . # Automatically triggers setup.py file
+# pip install -r requirements.txt
