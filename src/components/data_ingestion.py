@@ -16,6 +16,9 @@ from dataclasses import dataclass           # To create a class for configuratio
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTransformationConfig
 
+
+from src.components.model_trainer import ModelTrainer # model trainer
+
 # -------------------------
 # CONFIGURATION CLASS
 # -------------------------
@@ -91,7 +94,11 @@ if __name__ == "__main__":
 
  # Now combined transformation to this ingestion
     data_transformation=DataTransformation()
-    data_transformation.initiate_data_transformation(train_data,test_data)
+    train_array, test_array, _ = data_transformation.initiate_data_transformation(train_data, test_data)
+
+
+    ModelTrainer=ModelTrainer()
+    print(ModelTrainer.initiate_model_trainer(train_array,test_array))
 
 # -------------------------------------------------------------------------------------
 #  -m Flag Ka Magic
